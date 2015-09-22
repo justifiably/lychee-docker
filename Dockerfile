@@ -49,7 +49,7 @@ ADD conf/lychee /etc/nginx/sites-enabled/
 WORKDIR /var/www
 RUN git clone https://github.com/electerious/Lychee.git lychee
 RUN chown -R www-data:www-data /var/www/lychee
-RUN chmod -R 770 /var/www/lychee
+RUN chmod -R 771 /var/www/lychee
 RUN chmod -R 777 /var/www/lychee/uploads/ 
 RUN chmod -R 777 /var/www/lychee/data/
 
