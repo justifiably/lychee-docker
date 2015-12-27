@@ -7,10 +7,10 @@ MAINTAINER Kevin Delfour <kevin@delfour.eu>
 
 # ------------------------------------------------------------------------------
 # Install base
-RUN apt-get update
-RUN apt-get install -yq wget git unzip nginx fontconfig-config fonts-dejavu-core \
-    php5-fpm php5-common php5-json php5-cli php5-common php5-mysql\
-    php5-gd php5-json php5-mcrypt php5-readline psmisc ssl-cert \
+RUN apt-get update && \
+    apt-get install -yq wget git unzip nginx fontconfig-config fonts-dejavu-core \
+    php5-fpm php5-common php5-json php5-cli php5-common php5-mysql \
+    php5-gd php5-json php5-mcrypt php5-readline psmisc ssl-cert libav-tools \
     ufw php-pear libgd-tools libmcrypt-dev mcrypt mysql-server mysql-client
 
 # ------------------------------------------------------------------------------
