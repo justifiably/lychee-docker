@@ -50,7 +50,7 @@ ADD conf/lychee /etc/nginx/sites-enabled/
 # ------------------------------------------------------------------------------
 # Install Lychee
 WORKDIR /var/www
-RUN git clone https://github.com/Aidenir/Lychee.git lychee
+RUN git clone https://github.com/thejandroman/Lychee.git lychee
 RUN chown -R www-data:www-data /var/www/lychee
 RUN chmod -R 771 /var/www/lychee
 RUN chmod -R 777 /var/www/lychee/uploads/
