@@ -23,7 +23,7 @@ RUN service mysql start && \
     mysql -uroot -e "FLUSH PRIVILEGES;"
 RUN mkdir /var/lib/mysql_init && \
     mv /var/lib/mysql/* /var/lib/mysql_init
-    
+
 # ------------------------------------------------------------------------------
 # Configure php-fpm
 RUN sed -i -e "s/output_buffering\s*=\s*4096/output_buffering = Off/g" /etc/php5/fpm/php.ini
@@ -50,10 +50,10 @@ ADD conf/lychee /etc/nginx/sites-enabled/
 # ------------------------------------------------------------------------------
 # Install Lychee
 WORKDIR /var/www
-RUN git clone https://github.com/electerious/Lychee.git lychee
+RUN git clone https://github.com/Aidenir/Lychee.git lychee
 RUN chown -R www-data:www-data /var/www/lychee
 RUN chmod -R 771 /var/www/lychee
-RUN chmod -R 777 /var/www/lychee/uploads/ 
+RUN chmod -R 777 /var/www/lychee/uploads/
 RUN chmod -R 777 /var/www/lychee/data/
 
 # ------------------------------------------------------------------------------
@@ -63,7 +63,7 @@ EXPOSE 80
 # ------------------------------------------------------------------------------
 # Expose volumes
 WORKDIR /
-RUN ln -s /var/www/lychee/uploads uploads 
+RUN ln -s /var/www/lychee/uploads uploads
 RUN ln -s /var/www/lychee/data data
 RUN ln -s /var/lib/mysql mysql
 
